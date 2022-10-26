@@ -1,27 +1,37 @@
+using DnDCharacterBuilder;
 using System;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.CommonModels;
 
 namespace CharacterSpecFlow.StepDefinitions
 {
     [Binding]
     public class Testing1StepDefinitions
     {
-        [Given(@"The character has an (.*)")]
-        public void GivenTheCharacterHasAn(int p0)
+        public Testing1StepDefinitions(ScenarioContext scenarC)
         {
-            throw new PendingStepException();
+            _sc = scenarC;
+        }
+        private ScenarioContext _sc;
+
+            CharacterStats c = new();
+
+        [Given(@"The character has an (.*) in (.*)")]
+        public void GivenTheCharacterHasAn(int number, string stat)
+        {
+            c.SetStat(number, stat);
         }
 
-        [When(@"Stat is checked")]
-        public void WhenStatIsChecked()
+        [When(@"(.*) is checked")]
+        public void WhenStatIsChecked(string stat)
         {
-            throw new PendingStepException();
+            _sc.Add("bonus", c.GetBonus(stat));
         }
 
         [Then(@"The bonus should be (.*)")]
-        public void ThenTheBonusShouldBe(int p0)
+        public void ThenTheBonusShouldBe(int bonus)
         {
-            throw new PendingStepException();
+            _sc.Get<int>("bonus").Should().Be(bonus);
         }
     }
 }
