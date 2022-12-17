@@ -5,12 +5,13 @@ namespace DnDCharacterBuilder
     public class CharacterStats
     {
 
-        public int Strength { private set; get; }
-        public int Constitution { private set; get; }
-        public int Dexterity { private set; get; }
-        public int Intelegence { private set; get; }
-        public int Wisdom { private set; get; }
-        public int Charasma { private set; get; }
+        private int Strength {  set; get; }
+        private int Constitution {  set; get; }
+        private int Dexterity {  set; get; }
+        private int Intelegence {  set; get; }
+        private int Wisdom {  set; get; }
+        private int Charasma {  set; get; }
+
 
         public CharacterStats()
         {
@@ -50,6 +51,8 @@ namespace DnDCharacterBuilder
                 Charasma = score;
             }
         }
+
+
 
         public int GetBonus(string stat)
         {
