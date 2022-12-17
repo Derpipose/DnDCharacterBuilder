@@ -1,69 +1,129 @@
-﻿namespace DnDCharacterBuilder
+﻿using static System.Formats.Asn1.AsnWriter;
+
+namespace DnDCharacterBuilder
 {
     public class CharacterStats
     {
-        public int Strength { set; get; }   
+
+        public int Strength { private set; get; }
+        public int Constitution { private set; get; }
+        public int Dexterity { private set; get; }
+        public int Intelegence { private set; get; }
+        public int Wisdom { private set; get; }
+        public int Charasma { private set; get; }
 
         public CharacterStats()
         {
             Strength = 0;
+            Intelegence = 0;
+            Constitution = 0;
+            Dexterity = 0;
+            Wisdom = 0;
+            Charasma = 0;
+
         }
 
         public void SetStat(int score, string stat)
         {
             if (stat == "Strength")
             {
-            Strength = score;
+                Strength = score;
+            }
+            if (stat == "Intelegence")
+            {
+                Intelegence = score;
+            }
+            if (stat == "Wisdom")
+            {
+                Wisdom = score;
+            }
+            if (stat == "Dexterity")
+            {
+                Dexterity = score;
+            }
+            if (stat == "Constitution")
+            {
+                Constitution = score;
+            }
+            if (stat == "Charasma")
+            {
+                Charasma = score;
             }
         }
 
         public int GetBonus(string stat)
         {
-            int checker=10;
-            int bonus;
+            int checker=0;
+            int bonus=0;
             if(stat == "Strength")
             {
                 checker = Strength;
             }
-
-
-            if(checker > 10)
+            else if(stat == "Intelegence")
             {
-                bonus = (checker - 10);
+                checker = Intelegence;
             }
-            else
+            else if (stat == "Wisdom")
             {
-                bonus = checker;
+                checker = Wisdom;
+            }
+            else if (stat == "Dexterity")
+            {
+                checker = Dexterity;
+            }
+            else if (stat == "Constitution")
+            {
+                checker = Constitution ;
+            }
+            else if (stat == "Charasma")
+            {
+                checker = Charasma;
             }
 
+            if (checker == 0)
+            {
+                throw new Exception("Out of Bounds");
+            }
 
-            if (bonus == 0 || bonus == 1)
+            if (checker <= 3)
+            {
+                bonus = -4;
+            }
+            else if( checker == 4 || checker == 5)
+            {
+                bonus = -3;
+            }
+            else if(checker == 6 || checker == 7)
+            {
+                bonus = -2;
+            }
+            else if(checker <= 8 || checker == 9)
+            {
+                bonus = -1;
+            }
+            else if (checker == 10 || checker == 11)
             {
                 bonus = 0;
             }
-            else if (bonus == 2 || bonus == 3)
+            else if (checker == 12 || checker == 13)
             {
                 bonus = 1;
             }
-            else if (bonus == 4 || bonus == 5)
+            else if (checker == 14 || checker == 15)
             {
                 bonus = 2;
             }
-            else if (bonus == 6 || bonus == 7)
+            else if (checker == 16 || checker == 17)
             {
                 bonus = 3;
             }
-            else if (bonus == 8 || bonus == 9)
+            else if (checker == 18 || checker == 19)
             {
                 bonus = 4;
             }
-            else if(bonus == 10 || bonus == 11)
+            else if(checker == 20 || checker == 21)
             {
                 bonus = 5;
-            }
-            if(Strength < 10)
-            {
-                bonus *= -1;
             }
             return bonus;   
         }
