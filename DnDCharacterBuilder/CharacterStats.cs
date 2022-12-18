@@ -5,12 +5,18 @@ namespace DnDCharacterBuilder
     public class CharacterStats
     {
 
-        private int Strength {  set; get; }
-        private int Constitution {  set; get; }
-        private int Dexterity {  set; get; }
-        private int Intelegence {  set; get; }
-        private int Wisdom {  set; get; }
-        private int Charasma {  set; get; }
+        public int Strength { private set; get; }
+        public int Constitution { private set; get; }
+        public int Dexterity { private set; get; }
+        public int Intelegence { private set; get; }
+        public int Wisdom { private set; get; }
+        public int Charasma { private set; get; }
+        private int BaseStrength { set; get; }
+        private int BaseConstitution {  set; get; }
+        private int BaseDexterity {  set; get; }
+        private int BaseIntelegence {  set; get; }
+        private int BaseWisdom {  set; get; }
+        private int BaseCharasma {  set; get; }
 
 
         public CharacterStats()
@@ -22,33 +28,48 @@ namespace DnDCharacterBuilder
             Wisdom = 0;
             Charasma = 0;
 
+            BaseStrength = 0;
+            BaseIntelegence = 0;
+            BaseConstitution = 0;
+            BaseDexterity = 0;
+            BaseWisdom = 0;
+            BaseCharasma = 0;
+
+            
+
         }
 
-        public void SetStat(int score, string stat)
+        public void SetStat(int score, string stat, CharacterRace race)
         {
             if (stat == "Strength")
             {
-                Strength = score;
+                BaseStrength = score;
+                Strength = BaseStrength + race.RaceStrength;
             }
             if (stat == "Intelegence")
             {
-                Intelegence = score;
+                BaseIntelegence = score;
+                Intelegence = BaseIntelegence + race.RaceIntelegence;
             }
             if (stat == "Wisdom")
             {
-                Wisdom = score;
+                BaseWisdom = score;
+                Wisdom = BaseWisdom + race.RaceWisdom;
             }
             if (stat == "Dexterity")
             {
-                Dexterity = score;
+                BaseDexterity = score;
+                Dexterity = BaseDexterity + race.RaceDexterity;  
             }
             if (stat == "Constitution")
             {
-                Constitution = score;
+                BaseConstitution = score;
+                Constitution = BaseConstitution + race.RaceConstitution; 
             }
             if (stat == "Charasma")
             {
-                Charasma = score;
+                BaseCharasma = score;
+                Charasma = BaseCharasma + race.RaceCharasma; 
             }
         }
 
