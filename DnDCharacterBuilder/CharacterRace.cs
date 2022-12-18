@@ -33,16 +33,10 @@ namespace DnDCharacterBuilder {
             RaceDexterity = 0;
             RaceWisdom = 0;
             RaceCharasma = 0;
+            BonusMana = 0;
             RaceName = "";
             LoadJson();
         }
-        /*internal class Race
-        {
-            internal string Campaign { get; set; }
-            internal string Pick { get; set; }
-            internal string Special { get; set; }
-            internal string Language { get; set; }
-        }*/
         public void LoadJson() {
             using (StreamReader r = new StreamReader("C:\\Users\\thefl\\source\\repos\\DnDCharacterBuilder\\DnDCharacterBuilder\\Races.json")) {
                 string json = r.ReadToEnd();
@@ -57,7 +51,7 @@ namespace DnDCharacterBuilder {
 
                     try {
                         RaceStrength = race.Str;
-                    } catch (FormatException) {
+                    } catch{
                         RaceStrength = 0;
                     }
                     try {
@@ -95,8 +89,11 @@ namespace DnDCharacterBuilder {
                     AddOrMultMana = race.AddOrMultMana;
                     Variant = race.Variant;
                     Speed = race.Speed;
+                    return;
                 }
             }
+            
+            Console.WriteLine("Race not found. \nPlease ensure that the race was spelled correctly. Capitalization does matter too.");
         }
 
 

@@ -91,12 +91,12 @@ Scenario: Initial Set Up
 	Scenario: Assigning a character stats
 	Given A new character is made
 	When The character's name is Brant
-	When Brant has a 16 in Wisdom
-	And Brant has a 13 in Intelegence
-	And Brant has a 12 in Charasma
-	And Brant has a 14 in Dexterity
-	And Brant has a 18 in Strength
-	And Brant has a 16 in Constitution
+	When Brant puts a 16 in Wisdom
+	And Brant puts a 13 in Intelegence
+	And Brant puts a 12 in Charasma
+	And Brant puts a 14 in Dexterity
+	And Brant puts a 18 in Strength
+	And Brant puts a 16 in Constitution
 	Then Brant has a 16 in Constitution
 	Then Brant has a 16 in Wisdom
 	Then Brant has a 13 in Intelegence
@@ -104,3 +104,40 @@ Scenario: Initial Set Up
 	Then Brant has a 14 in Dexterity
 	Then Brant has a 18 in Strength
 	Then Brant has a 16 in Constitution
+
+	Scenario: Testing Mana
+		Given A new character is made
+		When The character's name is Aralen
+		When Aralen's class is Cleric
+		And Aralen puts a 16 in Intelegence
+		And Aralen puts a 18 in Wisdom
+		Then Aralen's Mana total should be 38
+
+	Scenario: Testing Health
+		Given A new character is made
+		When The character's name is Roric
+		When Roric's class is Knight
+		And Roric puts a 16 in Constitution
+		And Roric puts a 18 in Strength
+		And Roric puts a 12 in Wisdom
+		And Roric puts a 17 in Intelegence
+		And Roric puts a 13 in Dexterity
+		And Roric puts a 10 in Charasma
+		Then Roric's Mana total should be 36
+		Then Roric's Health total should be 45
+
+		Scenario: Testing Health with race
+		Given A new character is made
+		When The character's name is Roric
+		When Roric's class is Knight
+		And Roric puts a 16 in Constitution
+		And Roric puts a 18 in Strength
+		And Roric puts a 12 in Wisdom
+		And Roric puts a 17 in Intelegence
+		And Roric puts a 13 in Dexterity
+		And Roric puts a 10 in Charasma
+		Then Roric's Mana total should be 36
+		Then Roric's Health total should be 45
+		When Roric's race is Ulfgar
+		Then Roric's Mana total should be 23
+		Then Roric's Health total should be 50

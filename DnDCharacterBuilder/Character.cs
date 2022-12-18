@@ -17,8 +17,10 @@ namespace DnDCharacterBuilder
         public string Name { get; private set; }
         public string Race { get; private set; }
         public string ClassName { get; private set; }
+
         public CharacterStats CharStats = new();
         public CharacterRace CharRace = new();
+        public CharacterClass CharClass = new();
 
         public void SetName(string name)
         {
@@ -28,11 +30,18 @@ namespace DnDCharacterBuilder
         {
             Race = race;
             CharRace.SetRace(race);
-            CharStats.UpdateStats(CharRace);
+            CharStats.UpdateStats(CharRace, CharClass);
         }
         public void SetClass(string classinfo)
         {
             ClassName = classinfo;
+            CharClass.SetClass(classinfo);
+            CharStats.UpdateStats(CharRace, CharClass);
+        }
+
+        public void SetStats(int score, string stat) {
+            CharStats.SetStat(score, stat, CharRace);
+            CharStats.UpdateStats(CharRace, CharClass);
         }
     }
 }

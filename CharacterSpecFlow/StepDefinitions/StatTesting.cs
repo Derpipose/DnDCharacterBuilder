@@ -33,12 +33,11 @@ namespace CharacterSpecFlow.StepDefinitions
             _sc.Set<CharacterStats>(c, "stats");
         }
 
-        [When(@"(.*) has a (.*) in (.*)")]
+        [When(@"(.*) puts a (.*) in (.*)")]
         public void WhenHasAIn(string name, int number, string stat)
         {
             Character c = _sc.Get<Character>(name);
-            CharacterRace race = c.CharRace;
-            c.CharStats.SetStat(number, stat, race);
+            c.SetStats(number, stat);
             _sc.Set<Character>(c, name);
         }
 
@@ -88,6 +87,18 @@ namespace CharacterSpecFlow.StepDefinitions
             else return;
                 
         }
+
+        [Then(@"(.*)'s (.*) total should be (.*)")]
+        public void ThensTotalShouldBe(string name, string stat, int checker) {
+            Character c = _sc.Get<Character>(name);
+            if(stat == "Mana") {
+                c.CharStats.Mana.Should().Be(checker);
+            }
+            if(stat == "Health") {
+                c.CharStats.Health.Should().Be(checker);
+            }
+        }
+
 
     }
 }

@@ -67,7 +67,8 @@ namespace CharacterSpecFlow.StepDefinitions
         public void ThensClassShouldBe(string name, string check)
         {
             Character c = _sc.Get<Character>(name);
-            c.ClassName.Should().Be(check);
+            c.CharClass.ClassName.Should().Be(check);
+            /*c.ClassName.Should().Be(check);*/
         }
 
 
