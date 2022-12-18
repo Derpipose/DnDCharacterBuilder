@@ -27,7 +27,7 @@ namespace DnDCharacterBuilder
         public void SetRace(string race)
         {
             Race = race;
-            
+            CharRace.SetRace(race);
         }
         public void SetClass(string classinfo)
         {

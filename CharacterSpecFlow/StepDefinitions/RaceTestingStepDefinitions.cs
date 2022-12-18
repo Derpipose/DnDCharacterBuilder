@@ -6,22 +6,17 @@ namespace CharacterSpecFlow.StepDefinitions
     [Binding]
     public class RaceTestingStepDefinitions
     {
-        [Then(@"Brant's Intelegence should be (.*)")]
-        public void ThenBrantsIntelegenceShouldBe(int p0)
+        [Then(@"(.*)'s (.*) score should be (.*)")]
+        public void ThenBrantsIntelegenceShouldBe(string name, string stat, int score)
         {
             throw new PendingStepException();
         }
 
-        [Then(@"Brant's Strength should be (.*)")]
+        [Then(@"(.*)'s (.*) score should be (.*)")]
         public void ThenBrantsStrengthShouldBe(int p0)
         {
             throw new PendingStepException();
         }
 
-        [Then(@"Brant's Constitution should be (.*)")]
-        public void ThenBrantsConstitutionShouldBe(int p0)
-        {
-            throw new PendingStepException();
-        }
     }
 }
