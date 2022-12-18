@@ -73,6 +73,15 @@ namespace DnDCharacterBuilder
             }
         }
 
+        public void UpdateStats(CharacterRace race) {
+            Strength = BaseStrength + race.RaceStrength;
+            Constitution = BaseConstitution + race.RaceConstitution;
+            Dexterity = BaseDexterity + race.RaceDexterity;
+            Intelegence = BaseIntelegence + race.RaceIntelegence;
+            Wisdom = BaseWisdom + race.RaceWisdom;
+            Charasma = BaseCharasma + race.RaceCharasma;
+        }
+
 
 
         public int GetBonus(string stat)

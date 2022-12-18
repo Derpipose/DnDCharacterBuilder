@@ -58,7 +58,7 @@ namespace CharacterSpecFlow.StepDefinitions
         }
 
         [Then(@"(.*) has a (.*) in (.*)")]
-        public void ThenBrantHasAInConstitution(string name, int number, string stat)
+        public void ThenHasAIn(string name, int number, string stat)
         {
             Character c = _sc.Get<Character>(name);
             if (stat == "Constitution")

@@ -28,6 +28,7 @@ namespace DnDCharacterBuilder
         {
             Race = race;
             CharRace.SetRace(race);
+            CharStats.UpdateStats(CharRace);
         }
         public void SetClass(string classinfo)
         {
