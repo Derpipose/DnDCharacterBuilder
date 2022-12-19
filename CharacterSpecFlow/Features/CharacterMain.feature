@@ -57,3 +57,7 @@ Scenario: Setting Character Name
 	Then Paul's name should be Paul
 	Then Paul's class should be Monk
 	Then Paul's race should be Half Orc
+
+	Scenario: Building A Character
+	Given A new character is made
+	When The character's name is 
