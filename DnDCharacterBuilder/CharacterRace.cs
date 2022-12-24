@@ -25,6 +25,7 @@ namespace DnDCharacterBuilder {
 
 
         public List<int> Picks = new();
+        
         private dynamic RaceArray;
         private dynamic VarRaceArray;
 
@@ -359,7 +360,7 @@ namespace DnDCharacterBuilder {
             }
         }
 
-        public void LoadStats(int strength, int dexterity, int constitution, int intelegence, int wisdom, int charasma) {
+        public void LoadStats(int strength, int dexterity, int constitution, int intelegence, int wisdom, int charasma, int pick1, int pick2) {
             RaceStrength = strength;
             RaceDexterity = dexterity;
             RaceConstitution = constitution;
@@ -367,6 +368,12 @@ namespace DnDCharacterBuilder {
             RaceWisdom = wisdom;
             RaceCharasma = charasma;
 
+            if (pick1 != 0) {
+                Picks.Add(pick1);
+                if (pick2 != 0) {
+                    Picks.Add(pick2);
+                }
+            }
         }
 
     }

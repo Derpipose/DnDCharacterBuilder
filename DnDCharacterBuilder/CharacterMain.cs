@@ -177,9 +177,18 @@ namespace DnDCharacterBuilder {
                 characterstring += "\"RaceInt\": " + characterlist[i].CharRace.RaceIntelegence + ",\n";
                 characterstring += "\"RaceWis\": " + characterlist[i].CharRace.RaceWisdom + ",\n";
                 characterstring += "\"RaceCha\": " + characterlist[i].CharRace.RaceCharasma + ",\n";
+                if (characterlist[i].CharRace.Picks.Count() == 0) {
+                    characterstring += "\"Picks1\": 0,\n";
+                    characterstring += "\"Picks2\": 0,\n";
+                } else if (characterlist[i].CharRace.Picks.Count() == 1) {
+                    characterstring += "\"Picks1\": "  + characterlist[i].CharRace.Picks[0] + ",\n";
+                    characterstring += "\"Picks2\": 0,\n";
+                } else {
+                    characterstring += "\"Picks1\": " + characterlist[i].CharRace.Picks[0] + ",\n";
+                    characterstring += "\"Picks2\": " + characterlist[i].CharRace.Picks[1] + ",\n";
+                }
 
-
-                characterstring += "}";
+                    characterstring += "}";
                 json += characterstring;
             }
             json += "]";
@@ -210,16 +219,17 @@ namespace DnDCharacterBuilder {
                     int wis = character.BaseWis;
                     int cha = character.BaseCha;
                     newchar.CharStats.LoadStats(str, dex, con, inte, wis, cha);
-                    /*newchar.CharRace.LoadStats(Int32.Parse(character.RaceStr), Int32.Parse(character.RaceDex), Int32.Parse(character.RaceCon), Int32.Parse(character.RaceInt), Int32.Parse(character.RaceWis), Int32.Parse(character.RaceCha));
-*/
+                    
                     str = character.RaceStr;
                     dex = character.RaceDex;
                     con = character.RaceCon;
                     inte =character.RaceInt;
                     wis = character.RaceWis;
                     cha = character.RaceCha;
-                    newchar.CharRace.LoadStats(str, dex, con, inte, wis, cha);
-
+                    int pick1 = character.Picks1;
+                    int pick2 = character.Picks2;
+                    newchar.CharRace.LoadStats(str, dex, con, inte, wis, cha, pick1, pick2);
+                    newchar.CharStats.UpdateStats(newchar.CharRace, newchar.CharClass);
                     characterlist.Add(newchar);
                 }
             }
