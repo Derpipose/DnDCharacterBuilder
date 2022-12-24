@@ -43,5 +43,13 @@ namespace DnDCharacterBuilder
             CharStats.SetStat(score, stat, CharRace);
             CharStats.UpdateStats(CharRace, CharClass);
         }
+
+        public void LoadRace(string race) {
+            Race = race;
+        }
+
+        public void LoadClass(string classname) {
+            ClassName = classname;
+        }
     }
 }

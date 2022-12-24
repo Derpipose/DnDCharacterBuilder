@@ -21,6 +21,7 @@ namespace DnDCharacterBuilder {
         public string AddOrMultMana { private set; get; }
         public string Variant { private set; get; }
         public int Speed { private set; get; }
+        public string GivenLanguage { private set; get; }
         public string Campaign = "Fantasy";
 
 
@@ -97,6 +98,7 @@ namespace DnDCharacterBuilder {
                     } catch {
                         BonusMana = 0;
                     }
+                    GivenLanguage = race.Language;
                     AddOrMultMana = race.AddOrMultMana;
                     Variant = "";
                     Speed = race.Speed;
@@ -278,19 +280,10 @@ namespace DnDCharacterBuilder {
                     } catch {
                         BonusMana = 0;
                     }
+                    GivenLanguage = race.Language;
                     AddOrMultMana = race.AddOrMultMana;
                     Variant = "";
                     Speed = race.Speed;
-                    if (race.Pick == "1") {
-                        Picks.Add(1);
-                    } else if (race.Pick == "2") {
-                        Picks.Add(2);
-                    } else if (race.Pick == "Both") {
-                        Picks.Add(1);
-                        Picks.Add(2);
-                    } else if (race.Pick == "Race") {
-                        loadVarRace(name, var);
-                    }
                     return;
                 }
             }

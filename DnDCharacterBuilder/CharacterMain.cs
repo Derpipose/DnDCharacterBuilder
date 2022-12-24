@@ -134,7 +134,7 @@ namespace DnDCharacterBuilder {
                 if(input != "") {
 
                 character.SetClass(input);
-                Console.ReadLine();
+                input = Console.ReadLine();
                 }
             }
 
@@ -153,7 +153,42 @@ namespace DnDCharacterBuilder {
         }
 
         public void DisplayCharacter(Character character) {
+            Console.Clear();
+            string input = "initilized";
+            Console.WriteLine("Hit enter to go back");
+            while(input != "") {
 
+                Console.WriteLine(character.Name + "'s character sheet would look like this!");
+                if(character.ClassName == "") {
+                    Console.WriteLine("Class not set!");
+                } else {
+                    Console.WriteLine("Class: " + character.ClassName + " \nHit Die: D" + character.CharClass.HitDie + " Mana Die: D" + character.CharClass.ManaDie);
+                }
+                if(character.Race == "") {
+                    Console.WriteLine("Race not set!");
+                }else {
+                    Console.WriteLine("Race: " + character.Race + " Speed: " + character.CharRace.Speed + " Given Language: "+  character.CharRace.GivenLanguage);
+                }
+                if(character.CharStats.Strength == 0 || character.CharStats.Constitution == 0 || character.CharStats.Dexterity == 0 ||
+                    character.CharStats.Intelegence == 0 || character.CharStats.Wisdom == 0 || character.CharStats.Charasma == 0) {
+                    Console.WriteLine(character.Name + "'s stats aren't done yet!");
+                } else {
+                    Console.WriteLine("Strength:  " + character.CharStats.Strength + "(+" + character.CharStats.GetBonus("Strength") + ")" + "   Constitution: " + character.CharStats.Constitution + "(+" + character.CharStats.GetBonus("Constitution") + ") \n" + 
+                        "Dexterity: " + character.CharStats.Dexterity + "(+" + character.CharStats.GetBonus("Dexterity") + ")" + "   Intelegence:  " + character.CharStats.Intelegence + "(+" + character.CharStats.GetBonus("Intelegence") + ")\n" + 
+                        "Wisdom:    " + character.CharStats.Wisdom + "(+" + character.CharStats.GetBonus("Wisdom") + ")" + "   Charasma:     " + character.CharStats.Charasma + "(+" + character.CharStats.GetBonus("Charasma") + ")");
+                    Console.WriteLine("Initive:   +" + character.CharStats.GetBonus("Dexterity"));
+                }
+                if(character.ClassName == "" || character.Race == "" || (character.CharStats.Strength == 0 || character.CharStats.Constitution == 0 || character.CharStats.Dexterity == 0 ||
+                    character.CharStats.Intelegence == 0 || character.CharStats.Wisdom == 0 || character.CharStats.Charasma == 0)) {
+                    Console.WriteLine("Your character isn't complete yet, so your health and mana can't be generated yet!");
+                } else {
+                    Console.WriteLine("Health:    " + character.CharStats.Health + "       Mana: " + character.CharStats.Mana);
+                }
+
+                Console.ReadLine();
+                input = "";
+
+            }
         }
 
         public async void SaveCharacters() {
@@ -209,8 +244,10 @@ namespace DnDCharacterBuilder {
                     newchar.SetName(name);
                     string loadclass = character.Class;
                     newchar.CharClass.LoadClass(loadclass);
+                    newchar.LoadClass(loadclass);
                     string race = character.Race;
                     string racevar = character.RaceVariant;
+                    newchar.LoadRace(race);
                     newchar.CharRace.LoadRace(race, racevar);
                     int str = character.BaseStr;
                     int dex = character.BaseDex;

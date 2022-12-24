@@ -16,7 +16,7 @@ while (input != "") {
         Console.WriteLine("Welcome to the character building program. This is to allow you to build your character and get your stats without the need for Riley or Tree to help you.");
         Console.WriteLine("No character currently selected.");
     }
-    Console.WriteLine("\nPlease select an option using the number pad and hit enter to proceed. Or don't type anything and hit enter to exit.\n1. Select character.\n2. New character");
+    Console.WriteLine("\nPlease select an option using the number pad and hit enter to proceed. Or don't type anything and hit enter to save and exit.\n1. Select character.\n2. New character");
     if(CurrentCharacter != null) {
         if(CurrentCharacter.CharRace.Picks.Count > 0) {
             Alert = "!!!!!";
@@ -58,6 +58,10 @@ while (input != "") {
 
         case 7:
             running.DisplayCharacter(CurrentCharacter);
+            break;
+
+        case 8:
+            running.SaveCharacters();
             break;
 
 
