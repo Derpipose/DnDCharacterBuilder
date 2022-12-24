@@ -243,7 +243,6 @@ namespace DnDCharacterBuilder {
         public void LoadRace(string name, string var) {
             foreach (var race in RaceArray) {
                 if (race.Name == name && race.Campaign == Campaign) {
-                    Console.WriteLine("Race Set as " + name + "\n Please hit enter to continue or enter a different race to set.");
                     try {
                         RaceStrength = race.Str;
                     } catch {
@@ -288,7 +287,6 @@ namespace DnDCharacterBuilder {
                 }
             }
 
-            Console.WriteLine("Race not found. \nPlease ensure that the race was spelled correctly. Capitalization does matter too.");
         }
 
         public void loadVarRace(string name, string var) {

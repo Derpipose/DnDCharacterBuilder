@@ -58,7 +58,6 @@ namespace DnDCharacterBuilder {
         public void LoadClass(string name) {
             foreach (var item in ClassArray) {
                 if (item.ClassName == name) {
-                    Console.WriteLine("Class set as " + name);
                     ClassName = name;
                     SpellCastingMod = item.SpellCastingModifier;
                     MagicBooks = item.MagicBooks;
