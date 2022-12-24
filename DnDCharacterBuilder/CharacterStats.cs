@@ -10,12 +10,12 @@ namespace DnDCharacterBuilder
         public int Intelegence { private set; get; }
         public int Wisdom { private set; get; }
         public int Charasma { private set; get; }
-        private int BaseStrength { set; get; }
-        private int BaseConstitution { set; get; }
-        private int BaseDexterity { set; get; }
-        private int BaseIntelegence { set; get; }
-        private int BaseWisdom { set; get; }
-        private int BaseCharasma { set; get; }
+        public int BaseStrength { private set; get; }
+        public int BaseConstitution { private set; get; }
+        public int BaseDexterity { private set; get; }
+        public int BaseIntelegence { private set; get; }
+        public int BaseWisdom { private set; get; }
+        public int BaseCharasma { private set; get; }
 
         public int Health { private set; get; }
         public int Mana { private set; get; }
@@ -65,8 +65,6 @@ namespace DnDCharacterBuilder
                 Console.ReadLine();
             }
         }
-
-
 
         public void UpdateStats(CharacterRace race, CharacterClass charClass) {
             Strength = BaseStrength + race.RaceStrength;
@@ -156,6 +154,16 @@ namespace DnDCharacterBuilder
                 bonus = 5;
             }
             return bonus;
+        }
+
+        public void LoadStats(int strength, int dexterity, int constitution, int intelegence, int wisdom, int charasma) {
+            BaseStrength = strength;
+            BaseDexterity = dexterity;
+            BaseConstitution = constitution;
+            BaseIntelegence = intelegence;
+            BaseWisdom = wisdom;
+            BaseCharasma = charasma;
+
         }
     }
 }

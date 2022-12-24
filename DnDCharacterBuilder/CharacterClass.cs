@@ -39,6 +39,7 @@ namespace DnDCharacterBuilder {
         public void SetClass(string name) {
             foreach (var item in ClassArray) {
                 if (item.ClassName == name) {
+                    Console.WriteLine("Class set as " + name);
                     ClassName = name;
                     SpellCastingMod = item.SpellCastingModifier;
                     MagicBooks = item.MagicBooks;
@@ -51,6 +52,24 @@ namespace DnDCharacterBuilder {
                 }
             }
             Console.WriteLine("Class not found. Please ensure proper spelling and capitalization and try again.");
+
+        }
+
+        public void LoadClass(string name) {
+            foreach (var item in ClassArray) {
+                if (item.ClassName == name) {
+                    Console.WriteLine("Class set as " + name);
+                    ClassName = name;
+                    SpellCastingMod = item.SpellCastingModifier;
+                    MagicBooks = item.MagicBooks;
+                    Cantrips = item.Cantrips;
+                    Chances = item.Chances;
+                    HitDie = item.HitDie;
+                    ManaDie = item.ManaDie;
+                    ClassType = item.Classification;
+                    return;
+                }
+            }
 
         }
 

@@ -5,11 +5,11 @@ string input = "initilization";
 int option = 0;
 Character CurrentCharacter = null;
 CharacterMain running = new();
+string Alert = "";
 
 
 while (input != "") {
     Console.Clear();
-
     if (CurrentCharacter != null) {
         Console.WriteLine("Current Character : " + CurrentCharacter.Name);
     } else {
@@ -17,8 +17,12 @@ while (input != "") {
         Console.WriteLine("No character currently selected.");
     }
     Console.WriteLine("\nPlease select an option using the number pad and hit enter to proceed. Or don't type anything and hit enter to exit.\n1. Select character.\n2. New character");
-        if(CurrentCharacter != null) {
-        Console.WriteLine("3. Edit character stats.\n4. Edit character race.\n5. Edit character class.");
+    if(CurrentCharacter != null) {
+        if(CurrentCharacter.CharRace.Picks.Count > 0) {
+            Alert = "!!!!!";
+        } else { Alert = ""; }
+        Console.WriteLine("3. Edit character stats. " + Alert);
+        Console.WriteLine("4. Edit character race.\n5. Edit character class.\n6. Change Character Name\n7. See Character Information");
     }
         input = Console.ReadLine();
     try {
@@ -29,20 +33,32 @@ while (input != "") {
         
     switch (option) {
         case 1:
-            Console.Clear();
             CurrentCharacter = running.SetCharacter();
             break;
 
         case 2:
-            Console.Clear();
             CurrentCharacter = running.NewCharacter();
             break;
 
         case 3:
-            Console.Clear();
             running.EditStats(CurrentCharacter);
             break;
 
+        case 4:
+            running.EditRace(CurrentCharacter);
+            break;
+
+        case 5:
+            running.EditClass(CurrentCharacter);
+            break;
+
+        case 6:
+            running.EditName(CurrentCharacter);
+            break;
+
+        case 7:
+            running.DisplayCharacter(CurrentCharacter);
+            break;
 
 
         default:
@@ -50,4 +66,4 @@ while (input != "") {
     }   
 
 }
-return;
+running.SaveCharacters();
