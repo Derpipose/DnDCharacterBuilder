@@ -17,6 +17,9 @@ namespace DnDCharacterBuilder {
         public int MagicBooks { private set; get; }
         public int Cantrips { private set; get; }   
         public int Chances { private set; get; }
+        public string StatFavor1 { private set; get; }
+        public string StatFavor2 { private set; get; }
+        public int Skills { private set; get; }
         private dynamic ClassArray;
 
         public CharacterClass() {
@@ -48,6 +51,9 @@ namespace DnDCharacterBuilder {
                     HitDie = item.HitDie;
                     ManaDie = item.ManaDie;
                     ClassType = item.Classification;
+                    StatFavor1 = item.StatFavor1;
+                    StatFavor2 = item.StatFavor2;
+                    Skills = item.ProficiencyCount;
                     return;
                 }
             }
@@ -66,6 +72,9 @@ namespace DnDCharacterBuilder {
                     HitDie = item.HitDie;
                     ManaDie = item.ManaDie;
                     ClassType = item.Classification;
+                    StatFavor1 = item.StatFavor1;
+                    StatFavor2 = item.StatFavor2;
+                    Skills = item.ProficiencyCount;
                     return;
                 }
             }

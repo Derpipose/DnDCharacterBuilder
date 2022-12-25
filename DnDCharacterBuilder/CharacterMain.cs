@@ -59,10 +59,59 @@ namespace DnDCharacterBuilder {
             while (input != "") {
                 Console.Clear();
                 Console.WriteLine("Press enter to return to the previous page.");
-                Console.WriteLine(character.Name + "'s current stats are: \n Str: " + character.CharStats.BaseStrength +
-                    "\n Con: " + character.CharStats.BaseConstitution + "\n Dex: " + character.CharStats.BaseDexterity +
-                    "\n Int: " + character.CharStats.BaseIntelegence +
-                    "\n Wis: " + character.CharStats.BaseWisdom + "\n Cha: " + character.CharStats.BaseCharasma);
+                Console.WriteLine(character.Name + "'s current stats are:");
+                if (character.CharClass.StatFavor1 == "Str") {
+                    Console.WriteLine("Str: " + character.CharStats.BaseStrength + "  Class preferred highest");
+                } else if (character.CharClass.StatFavor2 == "Str") {
+                    Console.WriteLine("Str: " + character.CharStats.BaseStrength + "  Class preferred next highest");
+                } else {
+                    Console.WriteLine("Str: " + character.CharStats.BaseStrength);
+                }
+
+                if (character.CharClass.StatFavor1 == "Con") {
+                    Console.WriteLine("Con: " + character.CharStats.BaseConstitution + "  Class preferred highest");
+                } else if (character.CharClass.StatFavor2 == "Con") {
+                    Console.WriteLine("Con: " + character.CharStats.BaseConstitution + "  Class preferred next highest");
+                } else {
+                    Console.WriteLine("Con: " + character.CharStats.BaseConstitution);
+                }
+                
+                if (character.CharClass.StatFavor1 == "Dex") {
+                    Console.WriteLine("Dex: " + character.CharStats.BaseDexterity + "  Class preferred highest");
+                } else if (character.CharClass.StatFavor2 == "Dex") {
+
+                    Console.WriteLine("Dex: " + character.CharStats.BaseDexterity + "  Class preferred next highest");
+                } else {
+                    Console.WriteLine("Dex: " + character.CharStats.BaseDexterity);
+                }
+
+                if (character.CharClass.StatFavor1 == "Int") {
+                    Console.WriteLine("Int: " + character.CharStats.BaseIntelegence + "  Class preferred highest");
+                } else if (character.CharClass.StatFavor2 == "Int") {
+
+                    Console.WriteLine("Int: " + character.CharStats.BaseIntelegence + "  Class preferred next highest");
+                } else {
+                    Console.WriteLine("Int: " + character.CharStats.BaseIntelegence);
+                }
+
+                if (character.CharClass.StatFavor1 == "Wis") {
+                    Console.WriteLine("Wis: " + character.CharStats.BaseWisdom + "  Class preferred highest");
+                } else if (character.CharClass.StatFavor2 == "Wis") {
+
+                    Console.WriteLine("Wis: " + character.CharStats.BaseWisdom + "  Class preferred next highest");
+                } else {
+                    Console.WriteLine("Wis: " + character.CharStats.BaseWisdom);
+                }
+
+                if (character.CharClass.StatFavor1 == "Cha") {
+                    Console.WriteLine("Cha: " + character.CharStats.BaseCharasma + "  Class preferred highest");
+                } else if (character.CharClass.StatFavor2 == "Cha") {
+
+                    Console.WriteLine("Cha: " + character.CharStats.BaseCharasma + "  Class preferred next highest");
+                } else {
+                    Console.WriteLine("Cha: " + character.CharStats.BaseCharasma);
+                }
+
                 if (character.CharRace.RaceStrength != 0) { Console.WriteLine("Racial bonus to Strength of + " + character.CharRace.RaceStrength); }
                 if (character.CharRace.RaceConstitution != 0) { Console.WriteLine("Racial bonus to Constitution of + " + character.CharRace.RaceConstitution); }
                 if (character.CharRace.RaceDexterity != 0) { Console.WriteLine("Racial bonus to Dexterity of + " + character.CharRace.RaceDexterity); }
@@ -162,12 +211,13 @@ namespace DnDCharacterBuilder {
                 if(character.ClassName == "") {
                     Console.WriteLine("Class not set!");
                 } else {
-                    Console.WriteLine("Class: " + character.ClassName + " \nHit Die: D" + character.CharClass.HitDie + " Mana Die: D" + character.CharClass.ManaDie);
+                    Console.WriteLine("Class: " + character.ClassName + "   Magic Books: " + character.CharClass.MagicBooks + 
+                        " \nHit Die: D" + character.CharClass.HitDie + " Mana Die: D" + character.CharClass.ManaDie + "    Skills: " + character.CharClass.Skills);
                 }
                 if(character.Race == "") {
                     Console.WriteLine("Race not set!");
                 }else {
-                    Console.WriteLine("Race: " + character.Race + " Speed: " + character.CharRace.Speed + " Given Language: "+  character.CharRace.GivenLanguage);
+                    Console.WriteLine("Race: " + character.Race + "    Speed: " + character.CharRace.Speed + "    Given Language: "+  character.CharRace.GivenLanguage);
                 }
                 if(character.CharStats.Strength == 0 || character.CharStats.Constitution == 0 || character.CharStats.Dexterity == 0 ||
                     character.CharStats.Intelegence == 0 || character.CharStats.Wisdom == 0 || character.CharStats.Charasma == 0) {
@@ -176,13 +226,22 @@ namespace DnDCharacterBuilder {
                     Console.WriteLine("Strength:  " + character.CharStats.Strength + "(+" + character.CharStats.GetBonus("Strength") + ")" + "   Constitution: " + character.CharStats.Constitution + "(+" + character.CharStats.GetBonus("Constitution") + ") \n" + 
                         "Dexterity: " + character.CharStats.Dexterity + "(+" + character.CharStats.GetBonus("Dexterity") + ")" + "   Intelegence:  " + character.CharStats.Intelegence + "(+" + character.CharStats.GetBonus("Intelegence") + ")\n" + 
                         "Wisdom:    " + character.CharStats.Wisdom + "(+" + character.CharStats.GetBonus("Wisdom") + ")" + "   Charasma:     " + character.CharStats.Charasma + "(+" + character.CharStats.GetBonus("Charasma") + ")");
-                    Console.WriteLine("Initive:   +" + character.CharStats.GetBonus("Dexterity"));
+                    Console.WriteLine("Initive:   +" + character.CharStats.GetBonus("Dexterity") + "       AC:   " + (10 + character.CharStats.GetBonus("Dexterity")));
                 }
                 if(character.ClassName == "" || character.Race == "" || (character.CharStats.Strength == 0 || character.CharStats.Constitution == 0 || character.CharStats.Dexterity == 0 ||
                     character.CharStats.Intelegence == 0 || character.CharStats.Wisdom == 0 || character.CharStats.Charasma == 0)) {
                     Console.WriteLine("Your character isn't complete yet, so your health and mana can't be generated yet!");
                 } else {
                     Console.WriteLine("Health:    " + character.CharStats.Health + "       Mana: " + character.CharStats.Mana);
+                    if(character.CharClass.ClassType == "Magic") {
+                        Console.WriteLine(character.Name + " would start with either a Wand, an Orb or a Staff implement for spell casting.");
+                    }
+                    if (character.CharClass.ClassType == "Combat") {
+                        Console.WriteLine(character.Name + " would start with a trophy trinket along with the standard trinket.");
+                    }
+                    if (character.CharClass.ClassType == "Utility") {
+                        Console.WriteLine(character.Name + " would start with an extra standard trinket.");
+                    }
                 }
 
                 Console.ReadLine();
@@ -190,6 +249,20 @@ namespace DnDCharacterBuilder {
 
             }
         }
+
+        public Character DeleteCharacter(Character character) {
+            Console.WriteLine("Are you sure you want to do this? There is NO way to undo this action! Type \"DELETE\" if you are SURE you want to do this. If you have changed your mind, hit enter to go back.");
+            string input = Console.ReadLine();
+            if (input == "DELETE") {
+                for (int i = 0; i < characterlist.Count; i++) {
+                    if (characterlist[i] == character) {
+                        characterlist.RemoveAt(i);
+                        return null;
+                    }
+                }
+            }
+            return character;
+        }   
 
         public async void SaveCharacters() {
             string json = "[";
@@ -223,7 +296,7 @@ namespace DnDCharacterBuilder {
                     characterstring += "\"Picks2\": " + characterlist[i].CharRace.Picks[1] + ",\n";
                 }
 
-                    characterstring += "}";
+                    characterstring += "},";
                 json += characterstring;
             }
             json += "]";

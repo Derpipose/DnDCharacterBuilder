@@ -21,8 +21,8 @@ while (input != "") {
         if(CurrentCharacter.CharRace.Picks.Count > 0) {
             Alert = "!!!!!";
         } else { Alert = ""; }
-        Console.WriteLine("3. Edit character stats. " + Alert);
-        Console.WriteLine("4. Edit character race.\n5. Edit character class.\n6. Change Character Name\n7. See Character Information");
+        Console.WriteLine("3. Edit character class. " + Alert);
+        Console.WriteLine("4. Edit character race.\n5. Edit character stats.\n6. Change Character Name\n7. See Character Information\n8. Delete Character");
     }
         input = Console.ReadLine();
     try {
@@ -41,7 +41,7 @@ while (input != "") {
             break;
 
         case 3:
-            running.EditStats(CurrentCharacter);
+            running.EditClass(CurrentCharacter);
             break;
 
         case 4:
@@ -49,7 +49,7 @@ while (input != "") {
             break;
 
         case 5:
-            running.EditClass(CurrentCharacter);
+            running.EditStats(CurrentCharacter);
             break;
 
         case 6:
@@ -61,6 +61,10 @@ while (input != "") {
             break;
 
         case 8:
+            CurrentCharacter = running.DeleteCharacter(CurrentCharacter);
+            break;
+
+        case 9:
             running.SaveCharacters();
             break;
 
