@@ -60,6 +60,12 @@ namespace DnDCharacterBuilder {
         public void SetRace(string name) {
             foreach (var race in RaceArray) {
                 if (race.Name == name && race.Campaign == Campaign) {
+                    if (Picks.Count > 0) {
+                        Picks.RemoveAt(0);
+                        if (Picks.Count > 0) {
+                            Picks.RemoveAt(0);
+                        }
+                    }
                     Console.WriteLine("Race Set as " + name + "\n Please hit enter to continue or enter a different race to set.");
                     try {
                         RaceStrength = race.Str;

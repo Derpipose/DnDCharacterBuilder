@@ -16,6 +16,7 @@ namespace DnDCharacterBuilder {
         private List<Character> characterlist = new List<Character>();
 
         public Character SetCharacter() {
+            Console.Clear();
             int input = 32;
             string read = "initilized";
             while(read != "") {
@@ -212,7 +213,7 @@ namespace DnDCharacterBuilder {
                     Console.WriteLine("Class not set!");
                 } else {
                     Console.WriteLine("Class: " + character.ClassName + "   Magic Books: " + character.CharClass.MagicBooks + 
-                        " \nHit Die: D" + character.CharClass.HitDie + " Mana Die: D" + character.CharClass.ManaDie + "    Skills: " + character.CharClass.Skills);
+                        " \nHit Die: D" + character.CharClass.HitDie + "   Mana Die: D" + character.CharClass.ManaDie + "    Skills: " + character.CharClass.Skills);
                 }
                 if(character.Race == "") {
                     Console.WriteLine("Race not set!");
