@@ -271,6 +271,7 @@ namespace DnDCharacterBuilder {
 
                 string characterstring = "{";
                 characterstring += "\"Name\": \"" + characterlist[i].Name + "\",\n";
+                characterstring += "\"Setting\": \"" + characterlist[i].CharRace.Campaign + "\",\n";
                 characterstring += "\"Class\": \"" + characterlist[i].ClassName + "\",\n";
                 characterstring += "\"Race\": \"" + characterlist[i].Race + "\",\n";
                 characterstring += "\"RaceVariant\": \"" + characterlist[i].CharRace.Variant + "\",\n";
@@ -316,6 +317,8 @@ namespace DnDCharacterBuilder {
                     Character newchar = new();
                     string name = character.Name;
                     newchar.SetName(name);
+                    string setting = character.Setting;
+                    newchar.CharRace.Campaign = setting;
                     string loadclass = character.Class;
                     newchar.CharClass.LoadClass(loadclass);
                     newchar.LoadClass(loadclass);
@@ -342,6 +345,22 @@ namespace DnDCharacterBuilder {
                     newchar.CharRace.LoadStats(str, dex, con, inte, wis, cha, pick1, pick2);
                     newchar.CharStats.UpdateStats(newchar.CharRace, newchar.CharClass);
                     characterlist.Add(newchar);
+                }
+            }
+        }
+
+        public void EditSetting(Character character) {
+            string input = "initilize";
+            string setting;
+            while (input != "") {
+                
+                Console.Clear();
+                Console.WriteLine("Please enter a setting to form your character. Ensure spelling is correct. Or hit enter to go back.");
+                Console.WriteLine(character.Name + "'s setting is currently: " + character.CharRace.Campaign );
+                input = Console.ReadLine();
+                if (input != "") {
+                    character.CharRace.EditSetting(input);
+                    input  = Console.ReadLine();
                 }
             }
         }

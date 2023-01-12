@@ -373,5 +373,18 @@ namespace DnDCharacterBuilder {
             }
         }
 
+        public void EditSetting(string setting) {
+            if(setting == "Fantasy" || setting == "fantasy") {
+
+                Campaign = "Fantasy";
+                Console.WriteLine("Setting is now  Fantasy.");
+
+            } else if (setting == "scifi" || setting == "Scifi" || setting == "sci-fi" || setting == "Sci-fi") {
+                Campaign = "Scifi";
+                Console.WriteLine("Setting is now Sci-fi.");
+            } else {
+                Console.WriteLine("Could not find campaign setting. Please ensure proper spelling. Hit enter to continue.");
+            }
+        }
     }
 }

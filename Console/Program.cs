@@ -11,7 +11,7 @@ string Alert = "";
 while (input != "") {
     Console.Clear();
     if (CurrentCharacter != null) {
-        Console.WriteLine("Current Character : " + CurrentCharacter.Name);
+        Console.WriteLine("Current Character : " + CurrentCharacter.Name + "        Setting: " + CurrentCharacter.CharRace.Campaign);
     } else {
         Console.WriteLine("Welcome to the character building program. This is to allow you to build your character and get your stats without the need for Riley or Tree to help you.");
         Console.WriteLine("No character currently selected.");
@@ -23,7 +23,7 @@ while (input != "") {
         } else { Alert = ""; }
         Console.WriteLine("3. Edit character class. " );
         Console.WriteLine("4. Edit character race.\n5. Edit character stats."
-            + Alert + "\n6. Change Character Name\n7. See Character Information\n8. Delete Character");
+            + Alert + "\n6. Change Character Name\n7. See Character Information\n8. Edit Character Setting\n9. Delete Character");
     }
         input = Console.ReadLine();
     try {
@@ -62,10 +62,14 @@ while (input != "") {
             break;
 
         case 8:
-            CurrentCharacter = running.DeleteCharacter(CurrentCharacter);
+            running.EditSetting(CurrentCharacter);
             break;
 
         case 9:
+            CurrentCharacter = running.DeleteCharacter(CurrentCharacter);
+            break;
+
+        case 10:
             running.SaveCharacters();
             break;
 
