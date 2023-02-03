@@ -289,13 +289,13 @@ namespace DnDCharacterBuilder {
                 characterstring += "\"RaceCha\": " + characterlist[i].CharRace.RaceCharasma + ",\n";
                 if (characterlist[i].CharRace.Picks.Count() == 0) {
                     characterstring += "\"Picks1\": 0,\n";
-                    characterstring += "\"Picks2\": 0,\n";
+                    characterstring += "\"Picks2\": 0\n";
                 } else if (characterlist[i].CharRace.Picks.Count() == 1) {
                     characterstring += "\"Picks1\": "  + characterlist[i].CharRace.Picks[0] + ",\n";
-                    characterstring += "\"Picks2\": 0,\n";
+                    characterstring += "\"Picks2\": 0\n";
                 } else {
                     characterstring += "\"Picks1\": " + characterlist[i].CharRace.Picks[0] + ",\n";
-                    characterstring += "\"Picks2\": " + characterlist[i].CharRace.Picks[1] + ",\n";
+                    characterstring += "\"Picks2\": " + characterlist[i].CharRace.Picks[1] + "\n";
                 }
 
                     characterstring += "},";

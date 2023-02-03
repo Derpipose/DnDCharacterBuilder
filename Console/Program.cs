@@ -23,7 +23,7 @@ while (input != "") {
         } else { Alert = ""; }
         Console.WriteLine("3. Edit character class. " );
         Console.WriteLine("4. Edit character race.\n5. Edit character stats."
-            + Alert + "\n6. Change Character Name\n7. See Character Information\n8. Edit Character Setting\n9. Delete Character");
+            + Alert + "\n6. Change Character Name\n7. See Character Information\n8. Edit Character Setting\n9. Delete Character\n10. Save all characters");
     }
         input = Console.ReadLine();
     try {
