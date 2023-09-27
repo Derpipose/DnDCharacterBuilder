@@ -140,56 +140,56 @@ namespace DnDCharacterBuilder {
             bool raceSet = false;
             while (raceSet == false) {
                 input = Console.ReadLine();
-                foreach (var race in VarRaceArray) {
-                    if (race.Race == name && race.Variant == input) {
-                        Console.WriteLine("Race Set as " + name + "\n Please hit enter to continue or enter a different race to set.");
+                foreach (var variant in VarRaceArray) {
+                    if (variant.Race == name && variant.Variant == input) {
+                        Console.WriteLine("Race Set as " + variant.race + "\n Please hit enter to continue or enter a different race to set.");
                         try {
-                            RaceStrength = race.Str;
+                            RaceStrength = variant.Str;
                         } catch {
                             RaceStrength = 0;
                         }
                         try {
-                            RaceConstitution = race.Con;
+                            RaceConstitution = variant.Con;
                         } catch {
                             RaceConstitution = 0;
                         }
                         try {
-                            RaceDexterity = race.Dex;
+                            RaceDexterity = variant.Dex;
                         } catch {
                             RaceDexterity = 0;
                         }
                         try {
-                            RaceWisdom = race.Wis;
+                            RaceWisdom = variant.Wis;
                         } catch {
                             RaceWisdom = 0;
                         }
                         try {
-                            RaceCharasma = race.Cha;
+                            RaceCharasma = variant.Cha;
                         } catch {
                             RaceCharasma = 0;
                         }
                         try {
-                            RaceIntelegence = race.Int;
+                            RaceIntelegence = variant.Int;
                         } catch {
                             RaceIntelegence = 0;
                         }
                         RaceName = name;
                         try {
-                            BonusMana = race.BonusMana;
+                            BonusMana = variant.BonusMana;
                         } catch {
                             BonusMana = 0;
                         }
-                        AddOrMultMana = race.AddOrMultMana;
-                        Variant = race.Variant;
-                        if (race.Pick == "1") {
+                        AddOrMultMana = variant.AddOrMultMana;
+                        Variant = variant.Variant;
+                        if (variant.Pick == "1") {
                             Picks.Add(1);
-                        } else if (race.Pick == "2") {
+                        } else if (variant.Pick == "2") {
                             Picks.Add(2);
-                        } else if (race.Pick == "Both") {
+                        } else if (variant.Pick == "Both") {
                             Picks.Add(1);
                             Picks.Add(2);
                         }
-                        try { Speed = Int32.Parse(race.SpeedOverride); } catch { }
+                        try { Speed = Int32.Parse(variant.SpeedOverride); } catch { }
 
                         raceSet = true;
                     }
