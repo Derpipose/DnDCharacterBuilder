@@ -57,7 +57,7 @@ namespace DnDCharacterBuilder {
             }
         }
 
-        public void SetRace(string name) {
+        public string SetRace(string name) {
             foreach (var race in RaceArray) {
                 if (race.Name == name && race.Campaign == Campaign) {
                     if (Picks.Count > 0) {
@@ -118,11 +118,12 @@ namespace DnDCharacterBuilder {
                     } else if(race.Pick == "Race") {
                         SetVarRace(name);
                     }
-                    return;
+                    return name;
                 }
             }
             
             Console.WriteLine("Race not found. \nPlease ensure that the race was spelled correctly. Capitalization does matter too.");
+            return "";
         }
 
         public void SetVarRace(string name) {
