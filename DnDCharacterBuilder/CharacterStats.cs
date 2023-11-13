@@ -82,29 +82,29 @@ namespace DnDCharacterBuilder
             if(charClass.ClassType == "Magic"){
                 if (race.AddOrMultMana != "Mult") {
                     if (Intelegence <= Wisdom) {
-                        Mana = Intelegence + Wisdom + GetBonus("Wisdom") + race.BonusMana;
+                        Mana = Intelegence + Wisdom + GetBonus("Wisdom") + race.BonusMana + charClass.ManaDie;
                     } else {
-                        Mana = Intelegence + Wisdom + GetBonus("Intelegence") + race.BonusMana;
+                        Mana = Intelegence + Wisdom + GetBonus("Intelegence") + race.BonusMana + charClass.ManaDie;
                     }
                 } else {
                     if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom * race.BonusMana) + Intelegence + charClass.ManaDie + GetBonus("Wisdom");
+                        Mana = (Wisdom * race.BonusMana) + Intelegence + charClass.ManaDie + GetBonus("Wisdom") + charClass.ManaDie;
                     } else {
-                        Mana = (Intelegence * race.BonusMana) + Wisdom + charClass.ManaDie + GetBonus("Intelegence");
+                        Mana = (Intelegence * race.BonusMana) + Wisdom + charClass.ManaDie + GetBonus("Intelegence") + charClass.ManaDie;
                     }
                 }
             } else {
                 if (race.AddOrMultMana == "Mult") {
                     if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Wisdom"));
+                        Mana = (Wisdom * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Wisdom") + charClass.ManaDie);
                     } else {
-                        Mana = (Intelegence * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Intelegence"));
+                        Mana = (Intelegence * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Intelegence") + charClass.ManaDie);
                     }
                 } else {
                     if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom + (2 * charClass.ManaDie) + GetBonus("Wisdom") + race.BonusMana);
+                        Mana = (Wisdom + (2 * charClass.ManaDie) + GetBonus("Wisdom") + race.BonusMana) + charClass.ManaDie;
                     } else {
-                        Mana = (Intelegence + (2 * charClass.ManaDie) + GetBonus("Intelegence") + race.BonusMana);
+                        Mana = (Intelegence + (2 * charClass.ManaDie) + GetBonus("Intelegence") + race.BonusMana) + charClass.ManaDie;
                     }
                 }
             }

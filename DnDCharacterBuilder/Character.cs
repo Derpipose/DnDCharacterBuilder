@@ -33,6 +33,7 @@ namespace DnDCharacterBuilder
         }
         public void SetClass(string classinfo)
         {
+            //TODO: fix htis like race above
             ClassName = classinfo;
             CharClass.SetClass(classinfo);
             CharStats.UpdateStats(CharRace, CharClass);
