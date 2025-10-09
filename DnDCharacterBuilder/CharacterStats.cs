@@ -88,23 +88,23 @@ namespace DnDCharacterBuilder
                     }
                 } else {
                     if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom * race.BonusMana) + Intelegence + charClass.ManaDie + GetBonus("Wisdom") + charClass.ManaDie;
+                        Mana = (Wisdom * race.BonusMana) + Intelegence + charClass.ManaDie + GetBonus("Wisdom");
                     } else {
-                        Mana = (Intelegence * race.BonusMana) + Wisdom + charClass.ManaDie + GetBonus("Intelegence") + charClass.ManaDie;
+                        Mana = (Intelegence * race.BonusMana) + Wisdom + charClass.ManaDie + GetBonus("Intelegence");
                     }
                 }
             } else {
                 if (race.AddOrMultMana == "Mult") {
                     if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Wisdom") + charClass.ManaDie);
+                        Mana = (Wisdom * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Wisdom"));
                     } else {
-                        Mana = (Intelegence * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Intelegence") + charClass.ManaDie);
+                        Mana = (Intelegence * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Intelegence"));
                     }
                 } else {
                     if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom + (2 * charClass.ManaDie) + GetBonus("Wisdom") + race.BonusMana) + charClass.ManaDie;
+                        Mana = (Wisdom + (2 * charClass.ManaDie) + GetBonus("Wisdom") + race.BonusMana);
                     } else {
-                        Mana = (Intelegence + (2 * charClass.ManaDie) + GetBonus("Intelegence") + race.BonusMana) + charClass.ManaDie;
+                        Mana = (Intelegence + (2 * charClass.ManaDie) + GetBonus("Intelegence") + race.BonusMana);
                     }
                 }
             }

@@ -39,7 +39,7 @@ namespace DnDCharacterBuilder {
             }
         }
 
-        public void SetClass(string name) {
+        public string SetClass(string name) {
             foreach (var item in ClassArray) {
                 if (item.ClassName == name) {
                     Console.WriteLine("Class set as " + name);
@@ -54,11 +54,11 @@ namespace DnDCharacterBuilder {
                     StatFavor1 = item.StatFavor1;
                     StatFavor2 = item.StatFavor2;
                     Skills = item.ProficiencyCount;
-                    return;
+                    return name;
                 }
             }
             Console.WriteLine("Class not found. Please ensure proper spelling and capitalization and try again.");
-
+            return "";
         }
 
         public void LoadClass(string name) {

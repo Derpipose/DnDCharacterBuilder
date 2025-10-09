@@ -127,7 +127,7 @@ namespace DnDCharacterBuilder {
                 Console.WriteLine("\n Please enter a stat you would like to edit");
                 input = Console.ReadLine();
                 if(input != "") {
-                    if (input == "RACE" || input == "race") { 
+                    if (input == "RACE" || input == "Race" || input == "race") { 
                         for(int i = 0; i  < character.CharRace.Picks.Count; i++) {
                             Console.WriteLine("Where would you like the + " + character.CharRace.Picks[i] + "?");
                             input = Console.ReadLine();
