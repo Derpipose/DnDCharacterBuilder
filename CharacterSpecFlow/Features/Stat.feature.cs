@@ -226,7 +226,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The character has a 4 in Strength", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 23
- testRunner.And("a 19 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 19 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
  testRunner.When("Strength is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -269,7 +269,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The character has a 4 in Strength", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 30
- testRunner.And("a 19 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 19 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
  testRunner.When("Strength is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -278,10 +278,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("The Strength bonus should be -3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 33
- testRunner.When("Intelegence is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Intelligence is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
- testRunner.Then("The Intelegence bonus should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Intelligence bonus should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -327,13 +327,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("a 17 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 41
- testRunner.And("a 6 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 6 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
- testRunner.When("Charasma is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Charisma is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 43
- testRunner.Then("The Charasma bonus should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Charisma bonus should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 44
  testRunner.When("Wisdom is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -388,7 +388,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The character has a 4 in Strength", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 53
- testRunner.And("a 19 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 19 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 54
  testRunner.And("a 13 in Constitution", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -400,7 +400,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("a 17 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 57
- testRunner.And("a 6 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 6 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 58
  testRunner.When("Strength is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -409,16 +409,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("The Strength bonus should be -3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 60
- testRunner.When("Intelegence is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Intelligence is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 61
- testRunner.Then("The Intelegence bonus should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Intelligence bonus should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 62
- testRunner.When("Charasma is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Charisma is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 63
- testRunner.Then("The Charasma bonus should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Charisma bonus should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 64
  testRunner.When("Wisdom is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -473,7 +473,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The character has a 4 in Strength", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 73
- testRunner.And("a 19 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 19 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 74
  testRunner.And("a 13 in Constitution", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -485,16 +485,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("a 17 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 77
- testRunner.And("a 6 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a 6 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 78
  testRunner.When("Strength is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 79
- testRunner.When("Intelegence is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Intelligence is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 80
- testRunner.When("Charasma is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Charisma is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 81
  testRunner.When("Wisdom is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -515,13 +515,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("The Constitution bonus should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 87
- testRunner.Then("The Intelegence bonus should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Intelligence bonus should be 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 88
  testRunner.Then("The Dexterity bonus should be 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 89
- testRunner.Then("The Charasma bonus should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Charisma bonus should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -564,10 +564,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Brant puts a 16 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 95
- testRunner.And("Brant puts a 13 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Brant puts a 13 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 96
- testRunner.And("Brant puts a 12 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Brant puts a 12 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 97
  testRunner.And("Brant puts a 14 in Dexterity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -585,10 +585,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("Brant has a 16 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 102
- testRunner.Then("Brant has a 13 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Brant has a 13 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 103
- testRunner.Then("Brant has a 12 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Brant has a 12 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 104
  testRunner.Then("Brant has a 14 in Dexterity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -640,7 +640,7 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.When("Aralen\'s class is Cleric", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 112
-  testRunner.And("Aralen puts a 16 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("Aralen puts a 16 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 113
   testRunner.And("Aralen puts a 18 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -698,13 +698,13 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.And("Roric puts a 12 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 123
-  testRunner.And("Roric puts a 17 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("Roric puts a 17 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 124
   testRunner.And("Roric puts a 13 in Dexterity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 125
-  testRunner.And("Roric puts a 10 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("Roric puts a 10 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 126
   testRunner.Then("Roric\'s Mana total should be 36", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -762,13 +762,13 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.And("Roric puts a 12 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 136
-  testRunner.And("Roric puts a 17 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("Roric puts a 17 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 137
   testRunner.And("Roric puts a 13 in Dexterity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 138
-  testRunner.And("Roric puts a 10 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("Roric puts a 10 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 139
   testRunner.Then("Roric\'s Mana total should be 36", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

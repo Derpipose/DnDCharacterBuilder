@@ -25,7 +25,7 @@ namespace CharacterSpecFlow.StepDefinitions
         }
 
         [Given(@"a (.*) in (.*)")]
-        public void GivenAInIntelegence(int number, string stat)
+        public void GivenAInIntelligence(int number, string stat)
         {
             CharacterStats c = _sc.Get<CharacterStats>("stats");
             CharacterRace race = new CharacterRace();
@@ -64,9 +64,9 @@ namespace CharacterSpecFlow.StepDefinitions
             {
                 c.CharStats.Constitution.Should().Be(number);
             }
-            else if (stat == "Intelegence")
+            else if (stat == "Intelligence")
             {
-                c.CharStats.Intelegence.Should().Be(number);
+                c.CharStats.Intelligence.Should().Be(number);
             }
             else if (stat == "Strength")
             {
@@ -80,9 +80,9 @@ namespace CharacterSpecFlow.StepDefinitions
             {
                 c.CharStats.Wisdom.Should().Be(number);
             }
-            else if (stat == "Charasma")
+            else if (stat == "Charisma")
             {
-                c.CharStats.Charasma.Should().Be(number);
+                c.CharStats.Charisma.Should().Be(number);
             }
             else return;
                 

@@ -7,15 +7,15 @@ namespace DnDCharacterBuilder
         public int Strength { private set; get; }
         public int Constitution { private set; get; }
         public int Dexterity { private set; get; }
-        public int Intelegence { private set; get; }
+        public int Intelligence { private set; get; }
         public int Wisdom { private set; get; }
-        public int Charasma { private set; get; }
+        public int Charisma { private set; get; }
         public int BaseStrength { private set; get; }
         public int BaseConstitution { private set; get; }
         public int BaseDexterity { private set; get; }
-        public int BaseIntelegence { private set; get; }
+        public int BaseIntelligence { private set; get; }
         public int BaseWisdom { private set; get; }
-        public int BaseCharasma { private set; get; }
+        public int BaseCharisma { private set; get; }
 
         public int Health { private set; get; }
         public int Mana { private set; get; }
@@ -23,18 +23,18 @@ namespace DnDCharacterBuilder
 
         public CharacterStats() {
             Strength = 0;
-            Intelegence = 0;
+            Intelligence = 0;
             Constitution = 0;
             Dexterity = 0;
             Wisdom = 0;
-            Charasma = 0;
+            Charisma = 0;
 
             BaseStrength = 0;
-            BaseIntelegence = 0;
+            BaseIntelligence = 0;
             BaseConstitution = 0;
             BaseDexterity = 0;
             BaseWisdom = 0;
-            BaseCharasma = 0;
+            BaseCharisma = 0;
         }
 
         public void SetStat(int score, string stat, CharacterRace race) {
@@ -42,9 +42,9 @@ namespace DnDCharacterBuilder
                 BaseStrength = score;
                 Strength = BaseStrength + race.RaceStrength;
             } else
-            if (stat == "Intelegence" || stat == "Int" || stat == "int") {
-                BaseIntelegence = score;
-                Intelegence = BaseIntelegence + race.RaceIntelegence;
+            if (stat == "Intelligence" || stat == "Int" || stat == "int") {
+                BaseIntelligence = score;
+                Intelligence = BaseIntelligence + race.RaceIntelligence;
             } else
             if (stat == "Wisdom" || stat == "Wis" || stat == "wis") {
                 BaseWisdom = score;
@@ -58,9 +58,9 @@ namespace DnDCharacterBuilder
                 BaseConstitution = score;
                 Constitution = BaseConstitution + race.RaceConstitution;
             } else
-            if (stat == "Charasma" || stat == "Cha" || stat == "cha") {
-                BaseCharasma = score;
-                Charasma = BaseCharasma + race.RaceCharasma;
+            if (stat == "Charisma" || stat == "Cha" || stat == "cha") {
+                BaseCharisma = score;
+                Charisma = BaseCharisma + race.RaceCharisma;
             } else { Console.WriteLine("Please ensure proper spelling or abreviation and try again. Press enter to continue");
                 Console.ReadLine();
             }
@@ -70,9 +70,9 @@ namespace DnDCharacterBuilder
             Strength = BaseStrength + race.RaceStrength;
             Constitution = BaseConstitution + race.RaceConstitution;
             Dexterity = BaseDexterity + race.RaceDexterity;
-            Intelegence = BaseIntelegence + race.RaceIntelegence;
+            Intelligence = BaseIntelligence + race.RaceIntelligence;
             Wisdom = BaseWisdom + race.RaceWisdom;
-            Charasma = BaseCharasma + race.RaceCharasma;
+            Charisma = BaseCharisma + race.RaceCharisma;
             if (charClass.ClassType == "Combat") {
                 Health = (2 * Constitution + charClass.HitDie + GetBonus("Constitution"));
             } 
@@ -81,30 +81,30 @@ namespace DnDCharacterBuilder
             }
             if(charClass.ClassType == "Magic"){
                 if (race.AddOrMultMana != "Mult") {
-                    if (Intelegence <= Wisdom) {
-                        Mana = Intelegence + Wisdom + GetBonus("Wisdom") + race.BonusMana + charClass.ManaDie;
+                    if (Intelligence <= Wisdom) {
+                        Mana = Intelligence + Wisdom + GetBonus("Wisdom") + race.BonusMana + charClass.ManaDie;
                     } else {
-                        Mana = Intelegence + Wisdom + GetBonus("Intelegence") + race.BonusMana + charClass.ManaDie;
+                        Mana = Intelligence + Wisdom + GetBonus("Intelligence") + race.BonusMana + charClass.ManaDie;
                     }
                 } else {
-                    if (Intelegence <= Wisdom) {
-                        Mana = (Wisdom * race.BonusMana) + Intelegence + charClass.ManaDie + GetBonus("Wisdom");
+                    if (Intelligence <= Wisdom) {
+                        Mana = (Wisdom * race.BonusMana) + Intelligence + charClass.ManaDie + GetBonus("Wisdom");
                     } else {
-                        Mana = (Intelegence * race.BonusMana) + Wisdom + charClass.ManaDie + GetBonus("Intelegence");
+                        Mana = (Intelligence * race.BonusMana) + Wisdom + charClass.ManaDie + GetBonus("Intelligence");
                     }
                 }
             } else {
                 if (race.AddOrMultMana == "Mult") {
-                    if (Intelegence <= Wisdom) {
+                    if (Intelligence <= Wisdom) {
                         Mana = (Wisdom * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Wisdom"));
                     } else {
-                        Mana = (Intelegence * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Intelegence"));
+                        Mana = (Intelligence * race.BonusMana + (2 * charClass.ManaDie) + GetBonus("Intelligence"));
                     }
                 } else {
-                    if (Intelegence <= Wisdom) {
+                    if (Intelligence <= Wisdom) {
                         Mana = (Wisdom + (2 * charClass.ManaDie) + GetBonus("Wisdom") + race.BonusMana);
                     } else {
-                        Mana = (Intelegence + (2 * charClass.ManaDie) + GetBonus("Intelegence") + race.BonusMana);
+                        Mana = (Intelligence + (2 * charClass.ManaDie) + GetBonus("Intelligence") + race.BonusMana);
                     }
                 }
             }
@@ -119,16 +119,16 @@ namespace DnDCharacterBuilder
             int bonus = 0;
             if (stat == "Strength") {
                 checker = Strength;
-            } else if (stat == "Intelegence") {
-                checker = Intelegence;
+            } else if (stat == "Intelligence") {
+                checker = Intelligence;
             } else if (stat == "Wisdom") {
                 checker = Wisdom;
             } else if (stat == "Dexterity") {
                 checker = Dexterity;
             } else if (stat == "Constitution") {
                 checker = Constitution;
-            } else if (stat == "Charasma") {
-                checker = Charasma;
+            } else if (stat == "Charisma") {
+                checker = Charisma;
             }
 
 
@@ -156,13 +156,13 @@ namespace DnDCharacterBuilder
             return bonus;
         }
 
-        public void LoadStats(int strength, int dexterity, int constitution, int intelegence, int wisdom, int charasma) {
+        public void LoadStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
             BaseStrength = strength;
             BaseDexterity = dexterity;
             BaseConstitution = constitution;
-            BaseIntelegence = intelegence;
+            BaseIntelligence = intelligence;
             BaseWisdom = wisdom;
-            BaseCharasma = charasma;
+            BaseCharisma = charisma;
 
         }
     }

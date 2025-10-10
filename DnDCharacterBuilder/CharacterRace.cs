@@ -13,9 +13,9 @@ namespace DnDCharacterBuilder {
         public int RaceStrength { private set; get; }
         public int RaceConstitution { private set; get; }
         public int RaceDexterity { private set; get; }
-        public int RaceIntelegence { private set; get; }
+        public int RaceIntelligence { private set; get; }
         public int RaceWisdom { private set; get; }
-        public int RaceCharasma { private set; get; }
+        public int RaceCharisma { private set; get; }
         public string RaceName { private set; get; }
         public int BonusMana { private set; get; }
         public string AddOrMultMana { private set; get; }
@@ -32,11 +32,11 @@ namespace DnDCharacterBuilder {
 
         public CharacterRace() {
             RaceStrength = 0;
-            RaceIntelegence = 0;
+            RaceIntelligence = 0;
             RaceConstitution = 0;
             RaceDexterity = 0;
             RaceWisdom = 0;
-            RaceCharasma = 0;
+            RaceCharisma = 0;
             BonusMana = 0;
             RaceName = "";
             LoadJson();
@@ -87,16 +87,16 @@ namespace DnDCharacterBuilder {
                     } catch {
                         RaceWisdom = 0;
                     }
-                    try { 
-                        RaceCharasma = race.Cha;
+                    try {
+                        RaceCharisma = race.Cha;
                     }
                     catch {
-                        RaceCharasma= 0;
+                        RaceCharisma= 0;
                     }
                     try {
-                        RaceIntelegence = race.Int;
+                        RaceIntelligence = race.Int;
                     } catch {
-                        RaceIntelegence = 0;
+                        RaceIntelligence = 0;
                     }
                     RaceName = name;
                     try {
@@ -165,14 +165,14 @@ namespace DnDCharacterBuilder {
                             RaceWisdom = 0;
                         }
                         try {
-                            RaceCharasma = variant.Cha;
+                            RaceCharisma = variant.Cha;
                         } catch {
-                            RaceCharasma = 0;
+                            RaceCharisma = 0;
                         }
                         try {
-                            RaceIntelegence = variant.Int;
+                            RaceIntelligence = variant.Int;
                         } catch {
-                            RaceIntelegence = 0;
+                            RaceIntelligence = 0;
                         }
                         RaceName = name;
                         try {
@@ -211,9 +211,9 @@ namespace DnDCharacterBuilder {
                     RaceStrength = score;
                     Console.WriteLine("Racial Strength bonus set to " + score);
                     statset = true;
-                } else if ((stat == "Intelegence" || stat == "Int" || stat == "int") && RaceIntelegence == 0) {
-                    RaceIntelegence = score;
-                    Console.WriteLine("Racial Intelegence bonus set to " + score);
+                } else if ((stat == "Intelligence" || stat == "Int" || stat == "int") && RaceIntelligence == 0) {
+                    RaceIntelligence = score;
+                    Console.WriteLine("Racial Intelligence bonus set to " + score);
                     statset = true;
                 } else if ((stat == "Wisdom" || stat == "Wis" || stat == "wis") && RaceWisdom == 0) {
                     RaceWisdom = score;
@@ -227,9 +227,9 @@ namespace DnDCharacterBuilder {
                     RaceConstitution = score;
                     Console.WriteLine("Racial Constitution bonus set to " + score);
                     statset = true;
-                } else if ((stat == "Charasma" || stat == "Cha" || stat == "cha") && RaceCharasma == 0) {
-                    RaceCharasma = score;
-                    Console.WriteLine("Racial Charasma bonus set to " + score);
+                } else if ((stat == "Charisma" || stat == "Cha" || stat == "cha") && RaceCharisma == 0) {
+                    RaceCharisma = score;
+                    Console.WriteLine("Racial Charisma bonus set to " + score);
                     statset = true;
                 } else {
                     Console.WriteLine("Please ensure proper spelling or abreviation and try again. Also ensure that a bonus is not already applied to that stat. (They can not stack) Please enter a different stat.");
@@ -271,14 +271,14 @@ namespace DnDCharacterBuilder {
                         RaceWisdom = 0;
                     }
                     try {
-                        RaceCharasma = race.Cha;
+                        RaceCharisma = race.Cha;
                     } catch {
-                        RaceCharasma = 0;
+                        RaceCharisma = 0;
                     }
                     try {
-                        RaceIntelegence = race.Int;
+                        RaceIntelligence = race.Int;
                     } catch {
-                        RaceIntelegence = 0;
+                        RaceIntelligence = 0;
                     }
                     RaceName = name;
                     try {
@@ -324,14 +324,14 @@ namespace DnDCharacterBuilder {
                             RaceWisdom = 0;
                         }
                         try {
-                            RaceCharasma = race.Cha;
+                            RaceCharisma = race.Cha;
                         } catch {
-                            RaceCharasma = 0;
+                            RaceCharisma = 0;
                         }
                         try {
-                            RaceIntelegence = race.Int;
+                            RaceIntelligence = race.Int;
                         } catch {
-                            RaceIntelegence = 0;
+                            RaceIntelligence = 0;
                         }
                         RaceName = name;
                         try {
@@ -358,13 +358,13 @@ namespace DnDCharacterBuilder {
             }
         }
 
-        public void LoadStats(int strength, int dexterity, int constitution, int intelegence, int wisdom, int charasma, int pick1, int pick2) {
+        public void LoadStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int pick1, int pick2) {
             RaceStrength = strength;
             RaceDexterity = dexterity;
             RaceConstitution = constitution;
-            RaceIntelegence = intelegence;
+            RaceIntelligence = intelligence;
             RaceWisdom = wisdom;
-            RaceCharasma = charasma;
+            RaceCharisma = charisma;
 
             if (pick1 != 0) {
                 Picks.Add(pick1);

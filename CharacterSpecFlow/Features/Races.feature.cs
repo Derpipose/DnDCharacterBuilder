@@ -112,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Brant\'s race is Ulfgar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.Then("Brant\'s Intelegence score should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Brant\'s Intelligence score should be -2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
  testRunner.Then("Brant\'s Strength score should be 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -164,10 +164,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Maeve puts a 16 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
- testRunner.And("Maeve puts a 13 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Maeve puts a 13 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
- testRunner.And("Maeve puts a 12 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Maeve puts a 12 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
  testRunner.And("Maeve puts a 14 in Dexterity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -185,10 +185,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("Maeve has a 16 in Wisdom", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 26
- testRunner.Then("Maeve has a 14 in Intelegence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Maeve has a 14 in Intelligence", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 27
- testRunner.Then("Maeve has a 12 in Charasma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Maeve has a 12 in Charisma", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 28
  testRunner.Then("Maeve has a 16 in Dexterity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

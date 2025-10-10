@@ -1,7 +1,7 @@
 ﻿using DnDCharacterBuilder;
 using System;
 
-string input = "initilization";
+string input = "initialization";
 int option = 0;
 Character CurrentCharacter = null;
 CharacterMain running = new();

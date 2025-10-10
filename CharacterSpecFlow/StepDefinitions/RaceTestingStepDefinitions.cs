@@ -19,16 +19,16 @@ namespace CharacterSpecFlow.StepDefinitions
             Character c = _sc.Get<Character>(name);
             if (stat == "Constitution") {
                 c.CharStats.Constitution.Should().Be(number);
-            } else if (stat == "Intelegence") {
-                c.CharStats.Intelegence.Should().Be(number);
+            } else if (stat == "Intelligence") {
+                c.CharStats.Intelligence.Should().Be(number);
             } else if (stat == "Strength") {
                 c.CharStats.Strength.Should().Be(number);
             } else if (stat == "Dexterity") {
                 c.CharStats.Dexterity.Should().Be(number);
             } else if (stat == "Wisdom") {
                 c.CharStats.Wisdom.Should().Be(number);
-            } else if (stat == "Charasma") {
-                c.CharStats.Charasma.Should().Be(number);
+            } else if (stat == "Charisma") {
+                c.CharStats.Charisma.Should().Be(number);
             } else return;
 
         }
