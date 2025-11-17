@@ -32,7 +32,8 @@ namespace DnDCharacterBuilder {
         }
 
         public void LoadClasses() {
-            using (StreamReader r = new StreamReader("C:\\Users\\thefl\\source\\repos\\DnDCharacterBuilder\\DnDCharacterBuilder\\Classes.json")) {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Classes.json");
+            using (StreamReader r = new StreamReader(filePath)) {
                 string json = r.ReadToEnd();
                 dynamic array = JsonConvert.DeserializeObject(json);
                 ClassArray = array;

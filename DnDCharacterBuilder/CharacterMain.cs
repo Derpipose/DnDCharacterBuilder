@@ -302,12 +302,14 @@ namespace DnDCharacterBuilder {
                 json += characterstring;
             }
             json += "]";
-            await File.WriteAllTextAsync("C:\\Users\\thefl\\source\\repos\\DnDCharacterBuilder\\DnDCharacterBuilder\\Characters.json", json);
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Characters.json");
+            await File.WriteAllTextAsync(filePath, json);
         }
 
         public void LoadCharacters() {
             dynamic characterarray;
-            using (StreamReader r = new StreamReader("C:\\Users\\thefl\\source\\repos\\DnDCharacterBuilder\\DnDCharacterBuilder\\Characters.json")) {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Characters.json");
+            using (StreamReader r = new StreamReader(filePath)) {
                 string json = r.ReadToEnd();
                 dynamic array = JsonConvert.DeserializeObject(json);
                 characterarray = array;

@@ -42,7 +42,8 @@ namespace DnDCharacterBuilder {
             LoadJson();
         }
         public void LoadJson() {
-            using (StreamReader r = new StreamReader("C:\\Users\\thefl\\source\\repos\\DnDCharacterBuilder\\DnDCharacterBuilder\\Races.json")) {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Races.json");
+            using (StreamReader r = new StreamReader(filePath)) {
                 string json = r.ReadToEnd();
                 dynamic array = JsonConvert.DeserializeObject(json);
                 RaceArray = array;
@@ -50,7 +51,8 @@ namespace DnDCharacterBuilder {
         }
 
         public void LoadVarRaceJson() {
-            using (StreamReader r = new StreamReader("C:\\Users\\thefl\\source\\repos\\DnDCharacterBuilder\\DnDCharacterBuilder\\VariantRaces.json")) {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "VariantRaces.json");
+            using (StreamReader r = new StreamReader(filePath)) {
                 string json = r.ReadToEnd();
                 dynamic array = JsonConvert.DeserializeObject(json);
                 VarRaceArray = array;
